@@ -12,7 +12,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PIN,GPIO.OUT)
 GPIO.output(PIN,False)
 
-server_address = ('localhost', 6789)
+server_address = ('192.168.11.20', 6789)
 max_size = 1024
 print("Starting the server at", datetime.now())
 print("Waiting for a client to call.")
