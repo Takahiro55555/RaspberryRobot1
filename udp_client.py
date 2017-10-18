@@ -18,14 +18,16 @@ def send_commmand(address, port, command):
 
 command0 = b'''
 print("see you")
-break;
+break
 '''
 
 command1 = b'''
+GPIO.output(PIN,True)
 print("ON")
 '''
 
 command2 = b'''
+GPIO.output(PIN,False)
 print("OFF")
 '''
 while True:
@@ -33,20 +35,20 @@ while True:
     print(str(key))
     if key == 119:
         #w
-        send_commmand('localhost', 6789, command1)
-        print("w")
+        send_commmand('192.168.11.20', 6789, command1)
+        print("ON")
         #continue
 
     elif key == 32:
         #space key
-        send_commmand('localhost', 6789, command2)
-        print("space")
+        send_commmand('192.168.11.20', 6789, command2)
+        print("OFF")
         #continue
 
     elif key == 113:
         #q
-        send_commmand('localhost', 6789, command0)
-        print("q")
+        send_commmand('192.168.11.20', 6789, command0)
+        print("Finish")
         break
 
     else:
