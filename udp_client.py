@@ -3,20 +3,20 @@
 #sorce page: http://deutschina.hatenablog.com/entry/2016/02/22/013000
 """ This is UDP clietnt."""
 
-import socket
-from datetime import datetime
+def send_commmand(address, port, command):
+    import socket
+    server_address = (address, port)
+    max_size = 1024
 
-server_address = ('localhost',6789)
-max_size = 1024
+    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-print("Starting the client at", datetime.now())
-client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    client.sendto(command, server_address)
+    data, server = client.recvfrom(max_size)
+    print("At", server, "said", data)
+    client.close()
 
-msg = b"""print('Hey!!')
-print('Are you ready?')
-"""
-client.sendto(msg, server_address)
-data, server = client.recvfrom(max_size)
-print("At", datetime.now(), server, "said", data)
-client.close()
-
+command1 = b'''
+print("LED ON")
+print("LED OFF")
+'''
+send_commmand('localhost', 6789, command1)
