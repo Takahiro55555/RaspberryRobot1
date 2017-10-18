@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 #sorce page: http://deutschina.hatenablog.com/entry/2016/02/22/013000
 """ This is UDP clietnt."""
+import getch
 
 def send_commmand(address, port, command):
     import socket
@@ -15,8 +16,39 @@ def send_commmand(address, port, command):
     print("At", server, "said", data)
     client.close()
 
-command1 = b'''
-print("LED ON")
-print("LED OFF")
+command0 = b'''
+print("see you")
+break;
 '''
-send_commmand('localhost', 6789, command1)
+
+command1 = b'''
+print("ON")
+'''
+
+command2 = b'''
+print("OFF")
+'''
+while True:
+    key = ord(getch.getch())
+    print(str(key))
+    if key == 119:
+        #w
+        send_commmand('localhost', 6789, command1)
+        print("w")
+        #continue
+
+    elif key == 32:
+        #space key
+        send_commmand('localhost', 6789, command2)
+        print("space")
+        #continue
+
+    elif key == 113:
+        #q
+        send_commmand('localhost', 6789, command0)
+        print("q")
+        break
+
+    else:
+        continue
+

@@ -13,10 +13,12 @@ print("Waiting for a client to call.")
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server.bind(server_address)
 
-data, client = server.recvfrom(max_size)
 
-exec(data)
+while True:
+    data, client = server.recvfrom(max_size)
+    
+    exec(data)
 
-#print("At", datetime.now(), client, "said", data)
-server.sendto(b'Are you talking to me?', client)
+    #print("At", datetime.now(), client, "said", data)
+    server.sendto(b'Are you talking to me?', client)
 server.close()
