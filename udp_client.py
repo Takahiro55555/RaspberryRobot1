@@ -94,7 +94,7 @@ while True:
     if key == 119:
         #w
         send_commmand('192.168.11.20', 6789, command1)
-        print("Go straight"")
+        print("Go straight")
 
     elif key == 115:
         #s
