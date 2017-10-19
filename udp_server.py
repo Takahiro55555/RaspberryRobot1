@@ -24,7 +24,7 @@ GPIO.output(PIN2,False)
 GPIO.output(PIN3,False)
 GPIO.output(PIN4,False)
 
-server_address = ('localhost', 6789)
+server_address = ('192.168.11.20', 6789)
 max_size = 1024
 print("Starting the server at", datetime.now())
 print("Waiting for a client to call.")
@@ -41,8 +41,13 @@ while True:
 server.close()
 
 # RasPi
+<<<<<<< HEAD
 GPIO.output(PIN1,False)
 GPIO.output(PIN2,False)
 GPIO.output(PIN3,False)
 GPIO.output(PIN4,False)
 GPIO.cleanup()
+=======
+GPIO.output(PIN,False)
+GPIO.cleanup()
+>>>>>>> 278f1940bb9e0cd123e008a0c2a0e4dea5b5ab5d
