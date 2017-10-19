@@ -7,10 +7,21 @@ from datetime import datetime
 
 # RasPi
 import RPi.GPIO as GPIO
-PIN = 12
+
+PIN1 = 11
+PIN2 = 12
+PIN3 = 15
+PIN4 = 16
+
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(PIN,GPIO.OUT)
-GPIO.output(PIN,False)
+GPIO.setup(PIN1,GPIO.OUT)
+GPIO.setup(PIN2,GPIO.OUT)
+GPIO.setup(PIN3,GPIO.OUT)
+GPIO.setup(PIN4,GPIO.OUT)
+GPIO.output(PIN1,False)
+GPIO.output(PIN2,False)
+GPIO.output(PIN3,False)
+GPIO.output(PIN4,False)
 
 server_address = ('localhost', 6789)
 max_size = 1024
@@ -25,9 +36,12 @@ while True:
     exec(data)
 
     #print("At", datetime.now(), client, "said", data)
-    server.sendto(b'Are you talking to me?', client)
+    server.sendto(b'I receved your command.', client)
 server.close()
 
 # RasPi
-GPIO.output(PIN,False)
+GPIO.output(PIN1,False)
+GPIO.output(PIN2,False)
+GPIO.output(PIN3,False)
+GPIO.output(PIN4,False)
 GPIO.cleanup()
