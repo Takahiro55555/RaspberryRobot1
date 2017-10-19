@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #sorce page: http://deutschina.hatenablog.com/entry/2016/02/22/013000
+#動作確認済み
 
 import socket
 from datetime import datetime

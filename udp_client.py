@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 #sorce page: http://deutschina.hatenablog.com/entry/2016/02/22/013000
 """ This is UDP clietnt."""
+#動作確認済み
 import getch
 
 """
